@@ -1,0 +1,40 @@
+body
+{
+    font-family: 'Nunito Semibold';
+    color: whitesmoke;
+    text-align: center;
+}
+
+#content
+{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1em;
+    margin: 0 auto;
+}
+
+#content div
+{
+    font-size: 1.4em;
+    background: darkslategrey;
+    padding: 30px;
+}
+
+#content div:nth-child(even)
+{
+    background: indianred;
+}
+
+.nested
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.nested p
+{
+    border: 1px solid whitesmoke;
+    margin: 0;
+    padding: 20px;
+}

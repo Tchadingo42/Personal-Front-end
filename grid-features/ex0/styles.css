@@ -1,0 +1,28 @@
+body
+{
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+#content
+{
+    display: grid;
+    /* grid-template-columns: 1fr 1fr; */
+    grid-template-columns: repeat(3,3fr);
+    grid-template-rows: repeat(9, minmax(250px, auto)); 
+    grid-gap: 5px;
+    max-width: 960 px; 
+    margin: 0 auto; 
+}
+
+#content div
+{
+    background: #3bbced;
+    padding: 30px;
+}
+
+#content div:nth-child(even)
+{
+    background: #777;
+}

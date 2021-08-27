@@ -1,0 +1,47 @@
+body
+{
+    color: whitesmoke;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+#content
+{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+   /* grid-template-rows: repeat(1. 2fr); */
+   grid-auto-rows: minmax(180px, auto);
+    grid-gap: 4px;
+    margin: 0 auto;
+}
+
+#content div
+{
+    background: dodgerblue;
+    padding: 34px;
+    font-size: 1.4em;
+}
+
+#content div:nth-child(even)
+{
+    background: orchid;
+}
+
+.one
+{
+    justify-self: start;
+    align-self: start;
+}
+
+.two
+{
+    justify-self: center;
+    align-self: center;
+}
+
+.three
+{
+    justify-self: end;
+    align-self: end;
+}
+
