@@ -1,0 +1,62 @@
+body
+{
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+}
+
+.menu
+{
+    display: flex;
+    height: 50px;
+}
+
+.item
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.child-1
+{
+    background: chartreuse;
+}
+
+.child-2
+{
+    background: chocolate;
+}
+
+.child-3
+{
+    background: cornflowerblue;
+}
+
+.child-4
+{
+    background: crimson;
+}
+
+.child-5
+{
+    background: darkslategray;
+}
+
+/* si the size of the screen is >= of the value {...} */
+/* max-width -> destokp first */
+/* min-width -> mobile first */ 
+/* all, print, screen, speech to use with the end */
+@media (max-width: 800px)
+{
+    .menu
+    {
+        flex-direction: column;
+        height: auto;
+    }
+    .item
+    {
+        height: 50px;
+    }
+}
