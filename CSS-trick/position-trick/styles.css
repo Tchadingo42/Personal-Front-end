@@ -1,0 +1,85 @@
+body
+{
+    margin: auto 0;
+}
+
+div
+{
+    padding: 10px;
+    background-color: blueviolet;
+}
+
+/* Relative allows to use top,bottom, left, right
+
+.child-one
+{
+    background-color: aqua;
+    position: relative;
+    left: 30px;
+}
+
+.child-two
+{
+    background-color: chartreuse;
+    position: relative;
+    right: 10px;
+}
+
+.child-three
+{
+    background-color: coral;
+    position: relative;
+    top: 30px;
+}
+
+*/ 
+
+/* absolute  -> removes the element from the ducment flow 
+
+.parent
+{
+    position: relative;
+}
+
+.child-one
+{
+    background-color: aqua;
+}
+
+.child-two
+{
+    background-color: chartreuse;
+    position: absolute;
+    top: 0;
+   
+}
+
+.child-three
+{
+    background-color: coral;
+}
+
+*/
+
+/* Fixed -> has nothing to do with parents elements just ignore them */
+
+.child-one
+{
+    background-color: aqua;
+    position: relative;
+    left: 30px;
+}
+
+.child-two
+{
+    background-color: chartreuse;
+    position: relative;
+    right: 10px;
+}
+
+.child-three
+{
+    background-color: coral;
+    position: relative;
+    top: 30px;
+}
