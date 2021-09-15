@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Min max test</title>
+</head>
+<body>
+
+    <p>The lowest value in the tab is  <span id="low"></span></p>
+    <p>The Highest value in the tab is <span id="high"></span></p>
+
+
+
+    <script>
+        const tab = [10, 7, 4, 42, 24, 23, 34];
+
+        document.getElementById("low").innerHTML = myArrayMax(tab);
+        document.getElementById("high").innerHTML = myArrayMin(tab);
+
+        function myArrayMax(arr)
+        {
+            let len = arr.lenght;
+            let max = -Infinity;
+
+            while (len--)
+            {
+                if (arr[len] > max)
+                {
+                    max = arr[len];
+                }
+            }
+            return max;
+        }
+
+        function myArrayMin(tab)
+        {
+            let len = tab.lenght;
+            let min = Infinity;
+            
+            while (len--)
+            {
+                if (tab[len] < min)
+                {
+                    min = tab[len];
+                }
+            }
+            return min;
+        }
+    </script>
+</body>
+</html>

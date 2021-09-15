@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <h1 id="demo1">Element 1</h1>
+        <h2 id="demo2">Element 2</h2>
+        <p id="value1"></p>       
+
+    <button type="button" onclick="myFunction()">Action to use the function</button>
+
+    <script>
+        var nb1 = 24;
+        document.getElementById("value1").innerHTML = nb1;
+            function myFunction()
+            {
+                document.getElementById("demo1").innerHTML = "Modification 1";
+                document.getElementById("demo2").innerHTML = "Modification 2";
+            }
+
+    </script>
+
+
+    <!--  Javascript Basic statements
+
+       (1) var	Declares a variable
+       (2) let	Declares a block variable
+       (3) const	Declares a block constant
+       (4) if	Marks a block of statements to be executed on a condition
+       (5) switch	Marks a block of statements to be executed in different cases
+       (6) for	Marks a block of statements to be executed in a loop
+       (7) function	Declares a function
+       (8) return	Exits a function
+       (9) try	Implements error handling to a block of statements
+
+       A variable will have the value undefined after the execution of this statement:
+       The let was introduced in 2015 -> ES6
+       Variables defined with let cannot be Redeclared.
+
+       As a general rule, always declare a variable with const unless you know that the value will change.
+
+       the const does not define a constant value. It defines a constant reference to a value.
+
+       Javascript types are dynamic
+       -> that means that the same variable can hold different data types
+
+       Float does not exist in Javascript all numbers are decimals
+
+       const person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+       -> in this exemple the object " person " has 4 propreties
+       in Javascript a variable without value has the undefied value
+
+    -->
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h3>Array iterations</h3>
+    <p id="one"></p>
+    <h4>Map funcion utilisation</h4>
+    <p id="mapp"></p>
+    <h4>Filter function</h4>
+    <p id="filter"></p>
+    
+    <script>
+        const tab = [46,5, 17, 25, 10, 18];
+        const arr = tab.map(multi);
+        let text = "";
+
+        tab.forEach(my_function);
+        my_tab.filter(LessThan);
+        document.getElementById("one").innerHTML = text;
+
+        function my_function(value, index, array)
+        {
+            text += value + "<br>";
+        }
+
+        function multi(value)
+        {
+            return value * 2;
+        }
+        document.getElementById("mapp").innerHTML = arr;
+
+        /* Filter function */
+
+
+        function MyFilter(value, index, tab)
+        {
+            return value >= 18;
+        }
+
+        const ages = [14, 17, 16, 21, 25, 26];
+        const major = ages.filter(MyFilter);
+
+        document.getElementById("filter").innerHTML = major;
+
+    </script>
+
+
+<!-- 
+
+const numbers = [45, 4, 9, 16, 25];
+const over18 = numbers.filter(myFunction);
+
+document.getElementById("demo").innerHTML = over18;
+
+function myFunction(value, index, array) {
+  return value > 18;
+}
+
+const numbers = [45, 4, 9, 16, 25];
+
+let txt = "";
+numbers.forEach(myFunction);
+document.getElementById("demo").innerHTML = txt;
+
+function myFunction(value, index, array) {
+  txt += value + "<br>"; 
+}
+
+-->
+</body>
+</html>

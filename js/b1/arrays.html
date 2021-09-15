@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <!-- Array Parsing -->
+
+        <h1>Array parsing stuff</h1>
+
+        <h2>Standard array</h2>
+        <p id="test1"></p>
+        <h2>Foreach array</h2>
+        <p id="test2"></p>
+        <p id="test3"></p>
+        <h3>Array methods</h3>
+        <p id="test4"></p>
+        <h4>Strcmp in Javascript</h4>
+        <p id="test5">alphabet value</p>
+        <p id="test6">number value</p>
+        <br>
+        <h5>Boutons de test</h5>
+        <button type="button" onclick="sort_aph()"> Sort Aph</button>
+        <button type="button" onclick="sort_nb()">Sort Nb</button>
+
+
+        <script>
+
+            let my_array = ["one", "two", "three", "four"];
+            let size = my_array.length;
+            let text = "<ul>";
+
+            for(let i = 0 ; i < size ; i++)
+            {
+                text += "<li>" + my_array[i] + "</li>";
+            }
+            text += "</ul>";
+            document.getElementById("test1").innerHTML = text;
+
+            function my_function(value)
+            {
+                elem += "<li>" + value + "</li>";
+            }
+
+          
+            let names = ["chris", "david", "Tchadingo"];
+            let elem = "<ul>";
+            names.forEach(my_function);
+            elem += "</ul>";
+            document.getElementById("test2").innerHTML = elem;
+            names.push("Julien");
+            document.getElementById("test3").innerHTML = names;
+
+            const tab = ["a", "b", 'c', "d", "e", "f"];
+            document.getElementById("test4").innerHTML = tab.toString();
+
+            /* sorting functions */
+
+            const val = [34, 1, 10, 100, 77, 50, 14];
+
+            function sort_aph()
+            {
+                val.sort();
+            }
+
+            function sort_nb()
+            {
+                val.sort(function(a,b)
+                {
+                    return (a - b);
+                }
+                )
+            }
+
+            document.getElementById("test6").innerHTML = val;
+
+        </script>
+
+        <!--    JavaScript does not support arrays with named indexes. 
+                In JavaScript, arrays always use numbered indexes.  
+
+                If you use named indexes, JavaScript will redefine the array to an object.
+                After that, some array methods and properties will produce incorrect results.
+
+                The Difference Between Arrays and Objects
+                In JavaScript, arrays use numbered indexes.  
+                In JavaScript, objects use named indexes.
+
+                By default, the sort() function sorts values as strings.
+
+
+        
+        
+        
+        -->
+  
+</script>
+
+
+</body>
+</html>

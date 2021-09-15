@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <h1>Sort Stuff</h1>
+        <h3>Here is the test one without sort</h3>
+        <p id="one_a"></p>
+        <h3>Here is the test one after the sort</h3>
+        <p id="one_b"></p>
+        <h4>Here is te other type of sort</h4>
+        <button type="button" onclick="sort_number()">Sort by ascii function</button>
+        <p id="ascii_elem"></p>
+        <button type="button" onclick="xrand()">Random sort of the numbers</button>
+        <p id="rand"></p>
+        <H2>Min max methods</H2>
+        <p>The lowest number in the array is <span id="low"></span></p>
+        <p>The highest number in the array is <span id="high"></span> </p>
+
+        <script>
+            const tab = [21, 40, 4, 97, 23, 10, 7];
+            const tab_one = ["one", "two", "three", "four"];
+            const tab_two = [21, 46, 1, 700, 89, 55, 22, 900, 450];
+            const random_tab = [ 40, 33, 94, 20, 8, 65];
+            const tab_ascii =[400, 30, 55, 89, 22, 17, 39, 1, 77];
+
+            document.getElementById("low").innerHTML = myArrayMax(tab);
+            document.getElementById("high").innerHTML = myArrayMin(tab);
+            document.getElementById("one_a").innerHTML = tab_two;
+            document.getElementById("one_b").innerHTML = tab_two.sort();
+            document.getElementById("rand").innerHTML = random_tab;
+
+            /* sort by ascii */
+
+            document.getElementById("ascii_elem").innerHTML = tab_ascii;
+
+            function sort_number()
+            {
+                tab_ascii.sort(function(a, b)
+                {
+                    return (a - b);
+                });
+                    document.getElementById("ascii_elem").innerHTML = tab_ascii;
+            }
+
+            /* xrand */
+
+            function xrand()
+            {
+                random_tab.sort(function(a, b)
+                {
+                    return -0.5 - Math.random()
+                });
+                document.getElementById("rand").innerHTML = random_tab;
+            }
+
+            /* min max functions */
+
+            function myArrayMax(tab)
+            {
+                let len = tab.lenght;
+                let max = -Infinity;
+
+                while (len--) 
+                {
+                    if (tab[len] > max)
+                    {
+                        max = tab[len];
+                    }
+                }
+                return max;
+            }
+
+            function myArrayMin(tab)
+            {
+                let len = tab.lenght;
+                let min = Infinity;
+
+                while (len--)
+                {
+                    if (tab[len] < min)
+                    {
+                        min = tab[len];
+                    }
+                }
+                return min;
+            }
+
+
+        </script>
+</body>
+</html>
+
+<!-- 
+
+    <p>The lowest number is <span id="demo"></span>.</p>
+
+    function myArrayMin(arr) {
+  let len = arr.length;
+  let min = Infinity;
+  while (len--) {
+    if (arr[len] < min) {
+      min = arr[len];
+    }
+  }
+  return min;
+
+function myArrayMax(arr) {
+  let len = arr.length;
+  let max = -Infinity;
+  while (len--) {
+    if (arr[len] > max) {
+      max = arr[len];
+    }
+  }
+
+
+
+  <!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Array Sort</h2>
+<p>The highest number is <span id="demo"></span>.</p>
+
+<script>
+const points = [40, 100, 1, 5, 25, 10];
+document.getElementById("demo").innerHTML = myArrayMax(points);
+
+function myArrayMax(arr) {
+  let len = arr.length;
+  let max = -Infinity;
+  while (len--) {
+    if (arr[len] > max) {
+      max = arr[len];
+    }
+  }
+  return max;
+}
+</script>
+
+</body>
+</html>
+
+
+-->

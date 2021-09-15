@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B1 part 2</title>
+</head>
+<body>
+                                <!-- Javascript display possibilities -->
+
+<!-- (1) Writing into an HTML element, using innerHTML.  
+     (2) Writing into the HTML output using document.write().
+     (3) Writing into an alert box, using window.alert().
+     (4) Writing into the browser console, using console.log().
+-->
+
+        <p id="one"></p>
+        <script> document.getElementById("one").innerHTML = " I am going to be someone I swear to God"</script>
+        <script> document.write(1 + 5)</script>
+
+        <button type="button" onclick="document.write('there goes html')">Destruction of the HTML </button>
+        <script> window.alert("Alerte Alerte !") </script>
+        <script>alert("Hello world !")</script>
+        <script>console.log("This is used to debug programs but it only can see in the console ")</script>
+
+       <!-- Using document.write() after an HTML document is loaded, will delete all existing HTML: this method should only being used for testing -->
+       
+       <!-- In JavaScript, the window object is the global scope object,
+            that means that variables, properties, and methods by default belong to the window object.
+            This also means that specifying the window keyword is optional:
+       -->
+       <!-- Global scope object == objet de porter global -->
+
+</body>
+</html>
