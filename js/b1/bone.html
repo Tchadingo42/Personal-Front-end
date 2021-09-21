@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2>Try and Catch errors in JavaScript</h2>
+    <p>This is typically how to use catch and try -> <span id="try_one"></span></p>
+    <!-- Try and catch stuff-->
+    <h3>Try and catch utilisation exemple</h3>
+    <p>Please enter a value between 6 and 60 :</p>
+    <input type="text" id="rolling">
+    <button type="button" onclick="myFunction()">Validate number</button>
+    <p id="errors"></p>
+    <h2>The <i>This</i> keyword in JavaScript</h2>
+    <p>In this exemple, <b>this</b> represents the <b>person</b> object</p>
+    <p id="o"></p>
+    <h2>Let's talk about <b>arrow</b> in JavaScript now</h2>
+    <p id="arrow"></p>
+    <h2>Now Let's use a <b>class</b> in JavaScript</h2>
+    <p id="clas"></p>
+
+
+<script>
+
+    class Car 
+    {
+        constructor(name, brand, year)
+        {
+            this.name = name;
+            this.brand = brand;
+            this.year = year
+        }
+
+        age()
+        {
+            let date = new Date();
+            return date.getFullYear() - this.year;
+        }
+    }
+
+    let tkbCar = new Car("Model 3", "Tesla", 2019);
+
+    document.getElementById("clas").innerHTML = "my car is " + tkbCar.age() + " years old";
+
+
+
+    /* arrow */
+    var hello;
+    var salut;
+
+    hello = function()
+    {
+        return "hello";
+    }
+
+    salut = () =>
+    {
+        return "salut";
+    }
+
+    document.getElementById("arrow").innerHTML = salut();
+
+    /* object with this */
+    const person =
+    {
+        firstName: "Christopher",
+        lastName: "Tkb",
+        netWorth: "400 000 000 $",
+        fullName: function()
+        {
+            return this.firstName + " " + this.lastName;
+        }
+    };
+
+    document.getElementById("o").innerHTML = person.fullName();
+
+/* this */
+
+/* first try and catch test */
+
+try 
+{
+    allert("salut les amis");
+}
+
+catch(err)
+{
+    document.getElementById("try_one").innerHTML = err.message;
+}
+
+
+function myFunction()
+{
+    const erros = document.getElementById("errors");
+    errors.innerHTML = "";
+    let rolling = document.getElementById("rolling").value;
+
+    try
+    {
+        if (rolling == "") throw "is empty";
+        if (isNaN(rolling)) throw "is not a number";
+            rolling = Number(rolling);
+        if (rolling > 60) throw "is too high";
+        if (rolling < 6) throw "is too low";
+    }
+
+    catch(err)
+    {
+        erros.innerHTML = "Input " + err;
+    }
+}
+
+</script>
+
+
+    <!-- 
+        (a) JavaScript stores numbers as 64 bits floating point numbers,
+            but all bitwise operations are performed on 32 bits binary numbers.
+            JavaScript only uses 32 bits Bitwise Operands
+
+        (b) A regular expression is a sequence of characters that forms a search pattern.
+
+        (c) The try statement lets you test a block of code for errors.
+            The catch statement lets you handle the error.
+            The throw statement lets you create custom errors.
+            The finally statement lets you execute code, after try and catch, regardless of the result.
+
+        (d) An EvalError indicates an error in the eval() function.
+            A RangeError is thrown if you use a number that is outside the range of legal values.
+
+        (e) JavaScript has 3 types of scope:
+            Block scope
+            Function scope
+            Global scope
+
+        (f) In JavaScript, objects and functions are also variables.
+            In a web browser, global variables are deleted when you close the browser window (or tab).
+            In JavaScript, a variable can be declared after it has been used.
+            Variables defined with let and const are hoisted to the top of the block, but not initialized. 
+            JavaScript only hoists declarations, not initializations.
+
+        (g) The JavaScript this keyword refers to the object it belongs to.
+            In a method, this refers to the owner object.
+            Alone, this refers to the global object.
+            In a function, this refers to the global object.
+            In a function, in strict mode, this is undefined.
+            In an event, this refers to the element that received the event.
+
+
+        (e) A JavaScript class is not an object.
+            It is a template for JavaScript objects.
+
+        (f) JSON is a format for storing and transporting data.
+            JSON is often used when data is sent from a server to a web page.
+            JSON stands for JavaScript Object Notation
+
+        (g) Avoid global variables, avoid new, avoid ==, avoid eval()
+            JavaScript objects, variables, properties, and methods can be undefined.
+            Empty JavaScript objects can have the value null.
+            
+
+
+    -->
+</body>
+</html>

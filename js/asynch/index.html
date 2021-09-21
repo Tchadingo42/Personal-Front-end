@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Let's talk about Call back and Asynch functions</h1>
+    <p>To have better control over when to execute a function you have to sequence the program </p>
+    <p>So I have to do the calculation first save the result then print it with an other function</p>
+    <p id="one"></p>
+    <h2>Trying the same calculation with a callback now</h2>
+    <p id="two"></p>
+    <h1>Html and JS Animation concept</h1> 
+    <br>
+    <button type="button" onclick="anime()" > Activate the Animation</button>
+
+    <div id="container">
+        <div id="animate"></div>
+    </div>
+
+
+    
+    <script>
+
+        // Animation 
+
+
+function anime() 
+{
+  let id = null;
+  const elem = document.getElementById("animate");   
+  let pos = 0;
+  clearInterval(id);
+  id = setInterval(frame, 5);
+  function frame() {
+    if (pos == 350) {
+      clearInterval(id);
+    } else {
+      pos++; 
+      elem.style.top = pos + "px"; 
+      elem.style.left = pos + "px"; 
+    }
+  }
+}
+
+        // Sequence control
+        // The problem out here is that you have to call two functions
+
+        function tkbPrinter()
+        {
+            document.getElementById("one").innerHTML = "The value is " + sum;
+        }
+
+        function tbkCalculator(nb1, nb2)
+        {
+            let sum = nb1 + nb2;
+            return sum;
+        }
+
+        let sum = tbkCalculator(14,23);
+        tkbPrinter(sum);
+
+        // Call back function
+        // A callback is a function passed as an argument to another function.
+
+        function myPrinter(my_sum)
+        {
+            document.getElementById("two").innerHTML = "With the callback function the value is " + my_sum;
+        }
+
+        function myCalculator(nb1, nb2, callback)
+        {
+            let sum = nb1 + nb2;
+            callback(sum);
+        }
+
+        myCalculator(24, 13, myPrinter);
+
+        /* (a) Le point virgule automatique */
+        // en cas de ligne sauter javascript va omettre automatiquement des points virgule
+        function TableauValeur(val)
+        {
+            return [val];
+        }
+        console.log(TableauValeur(10));
+
+        /* (b) Call me back */
+        let i;
+
+        for (i = 0; i < 3; i++)
+        {
+            const log = () =>
+            {
+                console.log(i);
+            }
+            setTimeout(log, 1000);
+        }
+
+        /* Ca flotte */
+        // Javascript etait incapable de faire des nombres a virgules jusqu'a peut
+        const float_value = 0.2 + 0.3;
+        console.log(0.5 === float_value);
+
+        /* The Javascript coersion */
+
+        console.log('123' == 123);
+        console.log('123' === 123);
+
+
+
+    </script>
+
+    <!--
+        Les callbacks ne seront jamais appelés avant la fin du parcours de la boucle d'évènements JavaScript courante
+        La méthode then() renvoie une nouvelle promesse, différente de la première :
+
+        Cookies let you store user information in web pages.
+        Cookies are data, stored in small text files, on your computer.
+
+        A callback is a function passed as an argument to another function
+        This technique allows a function to call another function
+        A callback function can run after another function has finished
+        JavaScript functions are executed in the sequence they are called. Not in the sequence they are defined.
+        Asynch Functions running in parallel with other functions are called asynchronous -> A good example is JavaScript setTimeout()
+
+        The Promise object supports two properties: state and result.
+        While a Promise object is "pending" (working), the result is undefined.
+        When a Promise object is "fulfilled", the result is a value.
+        When a Promise object is "rejected", the result is an error object
+
+        You cannot access the Promise properties state and result.
+        You must use a Promise method to handle promises.
+
+        Promise.then() takes two arguments, a callback for success and another for failure.
+        Both are optional, so you can add a callback for success or failure o
+        "async and await make promises easier to write"
+        async makes a function return a Promise
+        await makes a function wait for a Promise
+
+        MySQL is a relational database management system
+
+        SELECT - extracts data from a database
+        UPDATE - updates data in a database
+        DELETE - deletes data from a database
+        INSERT INTO - inserts new data into a database
+        CREATE DATABASE - creates a new database
+        ALTER DATABASE - modifies a database
+        CREATE TABLE - creates a new table
+        ALTER TABLE - modifies a table
+        DROP TABLE - deletes a table
+        CREATE INDEX - creates an index (search key)
+        DROP INDEX - deletes an index
+
+
+
+    -->
+</body>
+</html>

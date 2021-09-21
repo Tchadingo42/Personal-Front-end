@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Format Set and Get</title>
+</head>
+<body>
+    <!-- Date : Date objects are static. The computer time is ticking, but date objects are not. -->
+    
+    <h1>Date value check</h1>
+    <p id="d_one"></p>
+    <h5>Get time</h5>
+    <p id="d_two"></p>
+    <p id="d_three"></p>
+    <p id="d_four"></p>
+    <h2>Math in Javascript</h2>
+    <p id="m_one"></p>
+    <p id="m_two"></p>
+    <p id="m_three"></p>
+    <h2>Random is Javascript</h2>
+    <p id="rng_one"></p>
+    <h6>RNG Function </h6>
+    <button onclick="document.getElementById('rng_two').innerHTML = proper_rng(10, 100)">Generate rng</button>
+    <p id="rng_two"></p>
+    <h2>Switch case statement</h2>
+    <p>Wich day are we today</p>
+    <p id="day_one"></p>
+    <h2>Here comes the loops once again ...</h2>
+    <h4>For loop</h4>
+    <p id="my_for"></p>
+    <h4>For in loop</h4>
+    <p id="my_for_in"></p>
+    <h4>For of loop</h4>
+    <p id="my_for_of"></p>
+    <h4>While loop</h4>
+    <p id="my_while"></p>
+    <h2>Maps method</h2>
+    <p id="my_map"></p>
+
+
+    <script>
+        /* Date */
+
+        const my_date_one = new Date();
+        document.getElementById("d_one").innerHTML = my_date_one;
+
+        const mdtwo = new Date();
+        document.getElementById("d_two").innerHTML = mdtwo.getTime();
+
+        const mdthree = new Date();
+        document.getElementById("d_three").innerHTML = mdthree.getUTCMonth();
+
+        const mdfour = new Date();
+        mdfour.setFullYear(2021);
+        document.getElementById("d_four").innerHTML = mdfour;
+
+        /* math */
+
+        const math_tab = [24, 55, 98, 22, 4];
+
+        document.getElementById("m_one").innerHTML = Math.PI;
+        document.getElementById("m_two").innerHTML = Math.min(12, 44, 55, 100);
+        document.getElementById("m_three").innerHTML = Math.random();
+
+
+        /* rng */
+
+        document.getElementById("rng_one").innerHTML = Math.floor(Math.random() * 101);    
+
+        function proper_rng(min, max)
+        {
+            return Math.floor(Math.random() * (min - max)) + min;
+        }
+
+        /* day */
+
+        let day;
+
+        switch(new Date().getDay())
+        {
+            case 0:
+                day = "Monday";
+                break;
+
+            case 1:
+                day = "Tesday";
+                break;
+
+            case 2:
+                day = "Wednesday";
+                break;
+
+            case 3:
+                day = "Thursday";
+                break;
+        }
+        
+        document.getElementById("day_one").innerHTML = "Actually we are " + day;
+
+        /* for loops once again ... */
+        
+        const cars = ["Toyota", "Jaguar", "BMW", "Peugeot", "Audi", "Suzuki"];
+        let text = "";
+        let len = cars.length;
+  
+        for (i = 0; i < len; i++)
+        {
+            text += cars[i] + "</br>";
+        }
+
+        document.getElementById("my_for").innerHTML = cars;
+        
+        /* for in loop */
+
+        const person =
+        {
+            name: "Christopher ",
+            title: " is Billionaire",
+            life: " and Happy"
+        };
+
+        let text_one = "";
+        for (let i in person)
+        {
+            text_one += person[i] + " ";
+        }
+
+        document.getElementById("my_for_in").innerHTML = text_one;
+
+        /* for of */
+
+        let stack = "Javascript";
+        let text_two = "";
+
+        for (let i in stack)
+        {
+           text_two += stack[i] + "</br>"; 
+        }
+
+        document.getElementById("my_for_of").innerHTML = text_two;
+
+        /* while */
+        const whiletab = ["I", "swear", "that", "I", "am", "going", "to", "be", "a", "billionaire"];
+        let j = 0;
+        let my_text = "";
+
+        while ( j < whiletab.length)
+        {
+            my_text += whiletab[j] + " ";
+            j = j + 1;
+        }
+        document.getElementById("my_while").innerHTML = my_text;
+
+        /* maps methods */
+
+        const fruits = new Map
+        ([
+            ["Cherry", 800],
+            ["Banane", 100],
+            ["Apple", 80],
+            ["Pear", 50]
+        ])
+
+        document.getElementById("my_map").innerHTML = fruits.get("Apple");
+        
+        
+        /* 
+        JavaScript Stores Dates as Milliseconds
+        Zero time is January 01, 1970 00:00:00 UTC. b
+        Because of the creation of the unix
+        Now the time is: 1631649938969 milliseconds past January 01, 1970
+        When setting a date, without specifying the time zone, JavaScript will use the browser's time zone.
+        In JavaScript, the first month (January) is month number 0, so December returns month number 11.
+        Unlike other objects, the Math object has no constructor.
+        A constructor is a function that creates an instance of a class which is typically called an “object”
+        The JavaScript for in statement loops through the properties of an Object:
+        A JavaScript Set is a collection of unique values.
+        Each value can only occur once in a Set.
+
+        une map -> contient des paires clé-valeur où les clés peuvent être n'importe quel type de données.
+        A Map holds key-value pairs where the keys can be any datatype.
+        A Map remembers the original insertion order of the keys.
+
+
+
+
+
+        maps -> 51
+        */
+
+
+
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+       
+    </script>
+
+</body>
+</html>
